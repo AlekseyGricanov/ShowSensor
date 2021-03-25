@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/name"
+        android:text="@string/name_sensor"
+        android:textColor="#FFFFFF"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minHeight="64dp"
+        android:gravity="center_vertical"
+        android:layout_margin="1dp"/>
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minHeight="64dp"
+        android:gravity="center_vertical"
+        android:text="@string/desc_sensor"
+        android:textColor="#FFFFFF"
+        android:layout_margin="1dp"/>
+
+    <TextView
+        android:id="@+id/cord"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minHeight="64dp"
+        android:gravity="center_vertical"
+        android:text="@string/cord_sensor"
+        android:textColor="#FFFFFF"
+        android:layout_margin="1dp"/>
+
+    <TextView
+        android:id="@+id/stat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minHeight="64dp"
+        android:gravity="center_vertical"
+        android:text="@string/status_sensor"
+        android:textColor="#FFFFFF"
+        android:layout_margin="1dp"/>
+
+</LinearLayout>

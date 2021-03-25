@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <TextView
+        android:id="@+id/name_sensor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minHeight="64dp"
+        android:gravity="center_vertical"
+        tools:text="name_sensor"/>
+
+    <TextView
+        android:id="@+id/desc_sensor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minHeight="64dp"
+        android:gravity="center_vertical"
+        tools:text="desc_sensor"/>
+
+    <TextView
+        android:id="@+id/cord_sensor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:minHeight="64dp"
+        android:gravity="center_vertical"
+        tools:text="cord_sensor"/>
+
+    <TextView
+        android:id="@+id/stat_sensor"
+        android:layout_width="1dp"
+        android:layout_height="wrap_content"
+        android:minHeight="64dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"/>
+
+</LinearLayout>
