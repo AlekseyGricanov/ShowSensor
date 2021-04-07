@@ -4,20 +4,21 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.sensor.model.MainItemSensor;
 
 import java.util.List;
 
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
-    private final List<RecyclerItem> itemView;
+    private final List<MainItemSensor> itemView;
 
-    public Adapter(List<RecyclerItem> listItems, Context mContext) {
+    public Adapter(List<MainItemSensor> listItems, Context mContext) {
         this.itemView = listItems;
     }
 
@@ -55,7 +56,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final RecyclerItem item = itemView.get(position);
+        final MainItemSensor item = itemView.get(position);
         holder.nameSensor.setText(item.getNameSensor());
         holder.descSensor.setText(item.getDescSensor());
         holder.cordSensor.setText(item.getCordSensor());

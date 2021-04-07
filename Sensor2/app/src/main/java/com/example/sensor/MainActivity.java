@@ -1,20 +1,19 @@
 package com.example.sensor;
 
+import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+import com.example.sensor.model.MainItemSensor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,39 +25,18 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
-        List<RecyclerItem> listItems = new ArrayList<>();
+        List<MainItemSensor> listItems = new ArrayList<>();
 
-        listItems.add(new RecyclerItem("Название", "Описание", "Кординаты", "Статус"));
+        listItems.add(new MainItemSensor("Название", "Описание", "Кординаты", "Статус"));
 
         for (int i = 0; i < 10; i++) {
-            listItems.add(new RecyclerItem("Name " + i, "CPRE" + i, "432, 324", "active"));
+            listItems.add(new MainItemSensor("Name " + i, "CPRE" + i, "432, 324", "active"));
         }
 
 
         Adapter adapter = new Adapter(listItems, this);
-//        View header = getLayoutInflater().inflate(R.layout.item_header, null);
-//        recyclerView.addHeaderView(header);
         recyclerView.setAdapter(adapter);
 
-
-//        TextView text = findViewById(R.id.name_sensor);
-//        text.setText("SPCE");
-//
-//        ListView list = findViewById(R.id.listView);
-//
-//        // определяем строковый массив
-//        final String[] catNames = new String[] {
-//                "RUSE" + " 65.3213, 45.2312" + " Россия. Аляска" + " active",
-//                "Рыжик", "Барсик", "Мурзик", "Мурка", "Васька",
-//                "Томасина", "Кристина", "Пушок", "Дымка", "Кузя",
-//                "Китти", "Масяня", "Симба"
-//        };
-//
-//        // используем адаптер данных
-//        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-//                android.R.layout.simple_list_item_1, catNames);
-//
-//        list.setAdapter(adapter);
     }
 
     public void onClick(View view) {

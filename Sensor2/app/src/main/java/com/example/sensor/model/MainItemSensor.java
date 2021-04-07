@@ -1,13 +1,13 @@
-package com.example.sensor;
+package com.example.sensor.model;
 
-public class RecyclerItem {
+public class MainItemSensor {
 
     private String nameSensor;
     private String descSensor;
     private String cordSensor;
     private String statusSensor;
 
-    public RecyclerItem(String nameSensor, String descSensor, String cordSensor, String statusSensor) {
+    public MainItemSensor(String nameSensor, String descSensor, String cordSensor, String statusSensor) {
         this.nameSensor = nameSensor;
         this.descSensor = descSensor;
         this.cordSensor = cordSensor;
