@@ -1,4 +1,4 @@
-package com.example.sensorproject.adapter
+package com.example.sensorproject.app.adapter
 
 import android.support.annotation.NonNull
 import android.support.v7.widget.RecyclerView
@@ -7,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.sensorproject.R
-import com.example.sensorproject.models.SensorItemList
-
-import java.util.*
+import com.example.sensorproject.app.models.SensorItemList
 
 open class AdapterListSensor(listItems: List<SensorItemList>) : RecyclerView.Adapter<AdapterListSensor.ViewHolder?>() {
     private val itemView: List<SensorItemList> = listItems

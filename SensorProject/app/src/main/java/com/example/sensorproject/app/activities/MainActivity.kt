@@ -1,4 +1,4 @@
-package com.example.sensorproject.activities
+package com.example.sensorproject.app.activities
 
 import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
@@ -9,10 +9,10 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.PresenterType
 import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.example.sensorproject.R
-import com.example.sensorproject.adapter.AdapterListSensor
-import com.example.sensorproject.presenters.SensorPresenter
-import com.example.sensorproject.views.SensorView
-import com.example.sensorproject.models.SensorItemList
+import com.example.sensorproject.app.adapter.AdapterListSensor
+import com.example.sensorproject.app.presenters.SensorPresenter
+import com.example.sensorproject.app.views.SensorView
+import com.example.sensorproject.app.models.SensorItemList
 
 
 class MainActivity : MvpAppCompatActivity(), SensorView {

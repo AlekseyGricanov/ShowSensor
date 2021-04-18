@@ -1,4 +1,4 @@
-package com.example.sensorproject.models
+package com.example.sensorproject.app.models
 
 data class SensorItemList(
     var nameSensor: String,

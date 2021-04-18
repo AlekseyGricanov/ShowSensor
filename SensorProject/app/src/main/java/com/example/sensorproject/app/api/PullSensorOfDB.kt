@@ -1,7 +1,7 @@
-package com.example.sensorproject.api
+package com.example.sensorproject.app.api
 
-import com.example.sensorproject.adapter.AdapterListSensor
-import com.example.sensorproject.models.SensorItemList
+import com.example.sensorproject.app.adapter.AdapterListSensor
+import com.example.sensorproject.app.models.SensorItemList
 import java.util.ArrayList
 
 class PullSensorOfDB(listItems: List<SensorItemList>) : AdapterListSensor(listItems) {
