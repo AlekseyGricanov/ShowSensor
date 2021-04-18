@@ -1,10 +1,10 @@
-package com.arellomobile.mvp.sample.kotlin.model
+package com.example.sensorproject.api
 
-import com.arellomobile.mvp.sample.kotlin.adapter.AdapterListSensor
-import com.arellomobile.mvp.sample.kotlin.interfaces.SensorItemList
+import com.example.sensorproject.adapter.AdapterListSensor
+import com.example.sensorproject.models.SensorItemList
 import java.util.ArrayList
 
-class PullSensorOfDB(listItems: List<SensorItemList>) : AdapterListSensor(listItems) {
+class PullSensorOfDB(listItems: List<SensorItemList>) : AdapterListSensor() {
     fun pullSensorList(): MutableList<SensorItemList> {
         val listItems: MutableList<SensorItemList> = ArrayList()
 

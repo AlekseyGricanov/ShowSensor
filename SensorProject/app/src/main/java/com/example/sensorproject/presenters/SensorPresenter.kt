@@ -2,8 +2,8 @@ package com.arellomobile.mvp.sample.kotlin.presenter
 
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
-import com.arellomobile.mvp.sample.kotlin.interfaces.SensorItemList
-import com.arellomobile.mvp.sample.kotlin.model.PullSensorOfDB
+import com.example.sensorproject.models.SensorItemList
+import com.example.sensorproject.api.PullSensorOfDB
 import com.arellomobile.mvp.sample.kotlin.view.SensorView
 import java.util.ArrayList
 
@@ -13,10 +13,10 @@ class SensorPresenter : MvpPresenter<SensorView>() {
         var listItems: MutableList<SensorItemList> = ArrayList()
         val PullSensorOfDB = PullSensorOfDB(listItems)
 
+        Thread {
+            listItems = PullSensorOfDB.pullSensorList()
 
-        listItems = PullSensorOfDB.pullSensorList()
-
-        viewState.startSensor(listItems)
-        viewState.shortMessage("Датчики обновлены")
+            viewState.startSensor(listItems)
+        }
     }
 }

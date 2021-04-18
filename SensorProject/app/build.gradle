@@ -41,12 +41,38 @@ android {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:27.1.1'
+    //Android support
+    def androidSupport = '27.1.1'
+    implementation "com.android.support:appcompat-v7:$androidSupport"
+    implementation "com.android.support:appcompat-v7:$androidSupport"
+    implementation "com.android.support:design:$androidSupport"
+    implementation "com.android.support:cardview-v7:$androidSupport"
+    implementation "com.android.support:recyclerview-v7:$androidSupport"
+    implementation "com.android.support:recyclerview-v7:$androidSupport"
+//    implementation project(path: ':domain')
 
-    implementation 'com.arello-mobile:moxy:1.5.5'
-    implementation 'com.arello-mobile:moxy-app-compat:1.5.5'
-    implementation 'com.android.support:recyclerview-v7:27.1.1'
-    kapt 'com.arello-mobile:moxy-compiler:1.5.5'
+    //Moxy
+    def moxyVersion = '1.5.5'
+    kapt "com.arello-mobile:moxy-compiler:$moxyVersion"
+    implementation "com.arello-mobile:moxy:$moxyVersion"
+    implementation "com.arello-mobile:moxy-android:$moxyVersion"
+    implementation "com.arello-mobile:moxy-app-compat:$moxyVersion"
+
+    //Retrofit
+    def retrofiVersion = '2.4.0'
+    implementation "com.squareup.retrofit2:retrofit:$retrofiVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofiVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofiVersion"
+
+    //OkHttp
+    def OkHttpVersion = '4.0.0'
+    implementation "com.squareup.okhttp3:okhttp:$OkHttpVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor:$OkHttpVersion"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+//    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.9'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
 }
