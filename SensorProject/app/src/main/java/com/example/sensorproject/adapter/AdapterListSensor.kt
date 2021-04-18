@@ -1,4 +1,4 @@
-package com.arellomobile.mvp.sample.kotlin.adapter
+package com.example.sensorproject.adapter
 
 import android.support.annotation.NonNull
 import android.support.v7.widget.RecyclerView
@@ -6,11 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.arellomobile.mvp.sample.kotlin.R
-import com.arellomobile.mvp.sample.kotlin.interfaces.SensorItemList
+import com.example.sensorproject.R
+import com.example.sensorproject.models.SensorItemList
+
+import java.util.*
 
 open class AdapterListSensor(listItems: List<SensorItemList>) : RecyclerView.Adapter<AdapterListSensor.ViewHolder?>() {
     private val itemView: List<SensorItemList> = listItems
+    //private val itemView: MutableList<SensorItemList> = LinkedList()
+
+//    fun setDate(newItemView: List<SensorItemList>) {
+//        itemView.clear()
+//        itemView.addAll(newItemView)
+//
+//        notifyDataSetChanged()
+//    }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var nameSensor: TextView = itemView.findViewById(R.id.name_sensor)

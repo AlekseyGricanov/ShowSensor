@@ -4,7 +4,7 @@ import com.example.sensorproject.adapter.AdapterListSensor
 import com.example.sensorproject.models.SensorItemList
 import java.util.ArrayList
 
-class PullSensorOfDB(listItems: List<SensorItemList>) : AdapterListSensor() {
+class PullSensorOfDB(listItems: List<SensorItemList>) : AdapterListSensor(listItems) {
     fun pullSensorList(): MutableList<SensorItemList> {
         val listItems: MutableList<SensorItemList> = ArrayList()
 

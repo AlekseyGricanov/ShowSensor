@@ -1,10 +1,10 @@
-package com.arellomobile.mvp.sample.kotlin.presenter
+package com.example.sensorproject.presenters
 
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.example.sensorproject.models.SensorItemList
 import com.example.sensorproject.api.PullSensorOfDB
-import com.arellomobile.mvp.sample.kotlin.view.SensorView
+import com.example.sensorproject.views.SensorView
 import java.util.ArrayList
 
 @InjectViewState

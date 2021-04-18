@@ -4,23 +4,20 @@ import android.os.Bundle
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.View
-import android.widget.Toast
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.PresenterType
 import com.arellomobile.mvp.presenter.ProvidePresenter
-import com.arellomobile.mvp.sample.kotlin.R
+import com.example.sensorproject.R
 import com.example.sensorproject.adapter.AdapterListSensor
-import com.arellomobile.mvp.sample.kotlin.presenter.SensorPresenter
-import com.arellomobile.mvp.sample.kotlin.view.SensorView
+import com.example.sensorproject.presenters.SensorPresenter
+import com.example.sensorproject.views.SensorView
 import com.example.sensorproject.models.SensorItemList
-import kotlinx.android.synthetic.main.main_sensor_list.*
 
 
 class MainActivity : MvpAppCompatActivity(), SensorView {
 
-    private val adapter = AdapterListSensor()
+    //private val adapter = AdapterListSensor()
 
 
     @InjectPresenter(type = PresenterType.GLOBAL)
@@ -40,20 +37,26 @@ class MainActivity : MvpAppCompatActivity(), SensorView {
         //rootView.setOnClickListener { dialogPresenter.onShowDialogClick() }
     }
 
-    override fun startSensor(date: List<SensorItemList>) {
-
-        //adapter.setDate(newItemView = date)
-    }
-
-    private fun setupAdapter() {
+    override fun startSensor(listItems: MutableList<SensorItemList>) {
         val recyclerView: RecyclerView = findViewById(R.id.list)
         val linearLayoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         recyclerView.layoutManager = linearLayoutManager
         recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
-        val adapter = AdapterListSensor()
+        val adapter = AdapterListSensor(listItems)
         recyclerView.adapter = adapter
+        //adapter.setDate(newItemView = date)
     }
+
+//    private fun setupAdapter() {
+//        val recyclerView: RecyclerView = findViewById(R.id.list)
+//        val linearLayoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+//        recyclerView.layoutManager = linearLayoutManager
+//        recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
+//
+//        val adapter = AdapterListSensor(listItems)
+//        recyclerView.adapter = adapter
+//    }
 
 
 }
