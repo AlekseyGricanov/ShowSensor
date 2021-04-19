@@ -11,8 +11,9 @@ import com.example.sensorproject.R
 import com.example.sensorproject.app.adapter.AdapterListSensor
 import com.example.sensorproject.app.presenters.SensorPresenter
 import com.example.sensorproject.app.views.SensorView
-import com.example.sensorproject.app.models.SensorItemList
+import com.example.sensorproject.domain.models.SensorItemList
 import kotlinx.android.synthetic.main.main_sensor_list.*
+import kotlinx.serialization.UnstableDefault
 
 
 class MainActivity : MvpAppCompatActivity(), SensorView {
@@ -29,6 +30,7 @@ class MainActivity : MvpAppCompatActivity(), SensorView {
 //    @ProvidePresenter(type = PresenterType.GLOBAL)
 //    fun provideDialogPresenter() = SensorPresenter()
 
+    @UnstableDefault
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_sensor_list)

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.example.sensorproject.R
-import com.example.sensorproject.app.models.SensorItemList
+import com.example.sensorproject.domain.models.SensorItemList
 import java.util.*
 
 open class AdapterListSensor() : RecyclerView.Adapter<AdapterListSensor.ViewHolder?>() {
