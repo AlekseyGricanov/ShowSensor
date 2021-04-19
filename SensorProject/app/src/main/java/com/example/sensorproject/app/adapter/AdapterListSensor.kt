@@ -8,46 +8,46 @@ import android.view.ViewGroup
 import android.widget.TextView
 import com.example.sensorproject.R
 import com.example.sensorproject.app.models.SensorItemList
+import java.util.*
 
-open class AdapterListSensor(listItems: List<SensorItemList>) : RecyclerView.Adapter<AdapterListSensor.ViewHolder?>() {
-    private val itemView: List<SensorItemList> = listItems
-    //private val itemView: MutableList<SensorItemList> = LinkedList()
+open class AdapterListSensor() : RecyclerView.Adapter<AdapterListSensor.ViewHolder?>() {
+    //private val itemView: List<SensorItemList> = listItems
+    private val itemView: MutableList<SensorItemList> = LinkedList()
 
-//    fun setDate(newItemView: List<SensorItemList>) {
-//        itemView.clear()
-//        itemView.addAll(newItemView)
-//
-//        notifyDataSetChanged()
-//    }
+    fun setDate(newItemView: List<SensorItemList>) {
+        itemView.clear()
+        itemView.addAll(newItemView)
+
+        notifyDataSetChanged()
+    }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var nameSensor: TextView = itemView.findViewById(R.id.name_sensor)
-        var descSensor: TextView = itemView.findViewById(R.id.desc_sensor)
-        var cordSensor: TextView = itemView.findViewById(R.id.cord_sensor)
-        var statSensor: TextView = itemView.findViewById(R.id.stat_sensor)
+        private val nameSensor: TextView = itemView.findViewById(R.id.name_sensor)
+        private val descSensor: TextView = itemView.findViewById(R.id.desc_sensor)
+        private val cordSensor: TextView = itemView.findViewById(R.id.cord_sensor)
+        private val statSensor: TextView = itemView.findViewById(R.id.stat_sensor)
 
-        init {
-            itemView.setOnClickListener {
-                //Ссылка на расширенное представление
-            }
+        fun bind(model: SensorItemList) {
+            nameSensor.text = model.nameSensor
+            descSensor.text = model.descSensor
+            cordSensor.text = model.cordSensor
+            statSensor.text = model.statusSensor // todo: переделать под нормальный статус, а не текстовый
         }
     }
 
     @NonNull
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-                LayoutInflater.from(parent.context).inflate(R.layout.item_sensor_list, parent, false))
+                LayoutInflater.from(viewGroup.context).inflate(R.layout.item_sensor_list, viewGroup, false))
     }
 
 
-    override fun getItemCount() = itemView.size
+    override fun getItemCount(): Int {
+        return itemView.count()
+    }
 
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item: SensorItemList = itemView[position]
-        holder.nameSensor.text = item.nameSensor
-        holder.descSensor.text = item.descSensor
-        holder.cordSensor.text = item.cordSensor
-        holder.statSensor.text = item.statusSensor
+    override fun onBindViewHolder(ViewHolder: ViewHolder, position: Int) {
+        ViewHolder.bind(model = itemView[position])
     }
 }

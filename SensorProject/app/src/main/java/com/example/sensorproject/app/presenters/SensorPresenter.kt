@@ -1,22 +1,31 @@
 package com.example.sensorproject.app.presenters
 
+import android.os.Handler
 import com.arellomobile.mvp.InjectViewState
 import com.arellomobile.mvp.MvpPresenter
 import com.example.sensorproject.app.models.SensorItemList
-import com.example.sensorproject.app.api.PullSensorOfDB
 import com.example.sensorproject.app.views.SensorView
 import java.util.ArrayList
+import kotlin.concurrent.thread
 
 @InjectViewState
 class SensorPresenter : MvpPresenter<SensorView>() {
     fun PullSensor() {
-        var listItems: MutableList<SensorItemList> = ArrayList()
-        val PullSensorOfDB = PullSensorOfDB(listItems)
+        viewState.loadingSensor()
 
-        Thread {
-            listItems = PullSensorOfDB.pullSensorList()
+        val handler = Handler()
+        thread {
+            Thread.sleep(3000)
+            val listItems = ArrayList<SensorItemList>()
+            listItems.add(SensorItemList("Название", "Описание", "Кординаты", "Статус"))
 
-            viewState.startSensor(listItems)
+            for (i in 0..9) {
+                listItems.add(SensorItemList("Name $i", "CPRE$i", "432, 324", "active"))
+            }
+
+            handler.post {
+                viewState.startSensor(data = listItems)
+            }
         }
     }
 }

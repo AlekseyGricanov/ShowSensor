@@ -19,7 +19,7 @@ android {
     buildToolsVersion '27.0.3'
 
     defaultConfig {
-        applicationId "com.arellomobile.mvp.sample.kotlin"
+        applicationId "com.example.sensorproject"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
