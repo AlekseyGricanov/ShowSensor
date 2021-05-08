@@ -28,7 +28,5 @@ class SensorPresenter : MvpPresenter<SensorView>() {
                 e.printStackTrace()
             }
         }
-
-
     }
 }

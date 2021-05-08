@@ -7,7 +7,6 @@ import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.async
 import kotlinx.serialization.UnstableDefault
-import java.util.ArrayList
 
 class SensorRepositoryImpl(private val sensorConverter: SensorConverterImpl) {
     private val sensorProvider: SensorProviderImpl = SensorProviderImpl()
@@ -15,23 +14,12 @@ class SensorRepositoryImpl(private val sensorConverter: SensorConverterImpl) {
     @UnstableDefault
     suspend fun PullSensor(): Deferred<List<SensorItemList>> {
         return try {
-            val sensor = sensorProvider.getSensorList().await()
+            val sensor = sensorProvider.getSensorListAsync().await()
             GlobalScope.async {
-                sensor.map { sensor -> sensorConverter.fromApiToUI(model = sensor)  }
+                sensor.map { sensor -> sensorConverter.fromApiToUISensor(model = sensor)  }
             }
         } catch (e: Exception)  {
             GlobalScope.async { error(e) }
         }
-
-    //        Thread.sleep(3000)
-//
-//        val listItems = ArrayList<SensorItemList>()
-//        listItems.add(SensorItemList("Название", "Описание", "Кординаты", "Статус"))
-//
-//        for (i in 0..9) {
-//            listItems.add(SensorItemList("Name $i", "CPRE$i", "432, 324", "active"))
-//        }
-//
-//        return GlobalScope.async { listItems }
     }
 }
