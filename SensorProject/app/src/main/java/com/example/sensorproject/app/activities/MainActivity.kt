@@ -9,14 +9,16 @@ import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.PresenterType
 import com.example.sensorproject.R
 import com.example.sensorproject.app.adapter.AdapterListSensor
+import com.example.sensorproject.app.adapter.AdapterListSensor.OnClickListener
 import com.example.sensorproject.app.presenters.SensorPresenter
 import com.example.sensorproject.app.views.SensorView
 import com.example.sensorproject.domain.models.SensorItemList
 import kotlinx.android.synthetic.main.main_sensor_list.*
 import kotlinx.serialization.UnstableDefault
+import kotlinx.android.synthetic.main.activity_sensor.*
 
 
-class MainActivity : MvpAppCompatActivity(), SensorView {
+class MainActivity : MvpAppCompatActivity(), SensorView, OnClickListener{
 
     private val listAdapter = AdapterListSensor()
 
@@ -57,5 +59,7 @@ class MainActivity : MvpAppCompatActivity(), SensorView {
         textListLoading.visibility = View.VISIBLE
     }
 
+    fun OnClickListener() {
 
+    }
 }
