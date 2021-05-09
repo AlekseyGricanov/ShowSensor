@@ -11,7 +11,6 @@ import com.example.sensorproject.domain.models.SensorItemList
 import java.util.*
 
 open class AdapterListSensor() : RecyclerView.Adapter<AdapterListSensor.ViewHolder?>() {
-    //private val itemView: List<SensorItemList> = listItems
     private val itemView: MutableList<SensorItemList> = LinkedList()
 
     fun setDate(newItemView: List<SensorItemList>) {
@@ -49,5 +48,9 @@ open class AdapterListSensor() : RecyclerView.Adapter<AdapterListSensor.ViewHold
 
     override fun onBindViewHolder(ViewHolder: ViewHolder, position: Int) {
         ViewHolder.bind(model = itemView[position])
+    }
+
+    interface OnClickListener {
+        fun onClickListener()
     }
 }
