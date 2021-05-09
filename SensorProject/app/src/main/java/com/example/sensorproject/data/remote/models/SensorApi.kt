@@ -1,6 +1,5 @@
 package com.example.sensorproject.data.remote.models
 
-import kotlinx.serialization.Serializable
 import kotlinx.serialization.*
 import kotlinx.serialization.json.Json
 
