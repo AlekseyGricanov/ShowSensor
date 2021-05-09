@@ -13,7 +13,7 @@ import retrofit2.Retrofit
 class RetrofitFactory {
 
     companion object {
-        private const val baseUrl = "http://192.168.0.57:9595/"
+        private const val baseUrl = "http://192.168.0.57:9595"
 
         private fun getOkHttpInstance(): OkHttpClient {
             val loggingInterceptor = HttpLoggingInterceptor()
