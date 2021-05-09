@@ -4,6 +4,7 @@ from django.db import models
 class Sensor(models.Model):
     """Класс датчиков
     """
+    objects = None
     id = models.IntegerField("Номер датчика", primary_key=True)
     name = models.CharField("Название датчика", max_length=10, unique=True)
     coordinates = models.IntegerField("Кординаты", unique=True)
@@ -15,7 +16,9 @@ class Sensor(models.Model):
 class SensorDetail(models.Model):
     """Класс деталей сенсора
     """
+    objects = None
     id_sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE)
     time_last_update = models.DateTimeField("Дата последнего обновления")
     per_storage = models.IntegerField("Процент свободной памяти")
     time_service = models.DateTimeField("Время последнего обслуживания")
+    desc = models.TextField("Описание датчика", max_length=400)
