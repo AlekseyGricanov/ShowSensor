@@ -1,10 +1,12 @@
 package com.example.sensorproject.app.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.arellomobile.mvp.MvpAppCompatActivity
+import com.example.sensorproject.androidx.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.PresenterType
 import com.example.sensorproject.R
@@ -16,21 +18,15 @@ import com.example.sensorproject.domain.models.SensorItemList
 import kotlinx.android.synthetic.main.main_sensor_list.*
 import kotlinx.serialization.UnstableDefault
 import kotlinx.android.synthetic.main.activity_sensor.*
+import kotlinx.android.synthetic.main.item_sensor_list.view.*
 
 
 class MainActivity : MvpAppCompatActivity(), SensorView, OnClickListener{
 
-    private val listAdapter = AdapterListSensor()
+    private val listAdapter = AdapterListSensor(this)
 
-
-    @InjectPresenter(type = PresenterType.GLOBAL)
+    @InjectPresenter(type = PresenterType.LOCAL)
     lateinit var sensorPresenter: SensorPresenter
-
-//    @ProvidePresenterTag(presenterClass = SensorPresenter::class, type = PresenterType.GLOBAL)
-//    fun provideDialogPresenterTag(): String = "Hello"
-//
-//    @ProvidePresenter(type = PresenterType.GLOBAL)
-//    fun provideDialogPresenter() = SensorPresenter()
 
     @UnstableDefault
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,17 +45,21 @@ class MainActivity : MvpAppCompatActivity(), SensorView, OnClickListener{
 
     override fun startSensor(data: List<SensorItemList>) {
         listSensor.visibility = View.VISIBLE
+        desc_sensor_list_layout.visibility = View.VISIBLE
         textListLoading.visibility = View.GONE
 
         listAdapter.setDate(newItemView = data)
     }
 
     override fun loadingSensor() {
+        desc_sensor_list_layout.visibility = View.GONE
         listSensor.visibility = View.GONE
         textListLoading.visibility = View.VISIBLE
     }
 
-    fun OnClickListener() {
-
+    override fun onClickListener(idSensor: Int) {
+        val randomIntent = Intent(this, SensorActivity::class.java)
+        randomIntent.putExtra("idSensor", idSensor);
+        startActivity(randomIntent)
     }
 }

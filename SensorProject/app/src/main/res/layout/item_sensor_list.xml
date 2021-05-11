@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:minHeight="64dp"
-        android:gravity="center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:textStyle="italic"
         tools:text="name_sensor"/>
 
     <TextView
@@ -23,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:minHeight="64dp"
-        android:gravity="center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:textStyle="italic"
         tools:text="desc_sensor"/>
 
     <TextView
@@ -32,15 +34,16 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:minHeight="64dp"
-        android:gravity="center_vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:textStyle="italic"
         tools:text="cord_sensor"/>
 
-    <TextView
+    <ImageView
         android:id="@+id/stat_sensor"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:minHeight="64dp"
+        android:layout_height="20dp"
         android:layout_weight="1"
+        android:layout_marginTop="20dp"
         android:gravity="center_vertical"/>
 
 </LinearLayout>

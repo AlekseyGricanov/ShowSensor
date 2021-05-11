@@ -13,11 +13,11 @@ import com.example.sensorproject.domain.models.SensorList
 import java.util.*
 
 open class AdapterSensor() : RecyclerView.Adapter<AdapterSensor.ViewHolder?>() {
-    private val itemView: MutableList<SensorList> = LinkedList()
+    private val itemView: SensorList
 
-    fun setDate(newItemView: List<SensorList>) {
+    fun setDate(newItemView: SensorList) {
         itemView.clear()
-        itemView.addAll(newItemView)
+        itemView.add(newItemView)
 
         notifyDataSetChanged()
     }

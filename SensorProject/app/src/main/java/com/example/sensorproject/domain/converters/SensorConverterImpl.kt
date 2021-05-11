@@ -8,6 +8,6 @@ import com.example.sensorproject.domain.models.SensorList
 class SensorConverterImpl {
 
     fun fromApiToUISensor(model: SensorApi): SensorItemList {
-        return SensorItemList(nameSensor = model.name, descSensor = model.desc, cordSensor = model.coordinates, statusSensor = model.status)
+        return SensorItemList(idSensor = model.id ,nameSensor = model.name, descSensor = model.desc, cordSensor = model.coordinates, statusSensor = model.status)
     }
 }

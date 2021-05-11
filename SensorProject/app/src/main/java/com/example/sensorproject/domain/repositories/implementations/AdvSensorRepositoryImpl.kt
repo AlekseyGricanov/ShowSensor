@@ -1,5 +1,8 @@
 package com.example.sensorproject.domain.repositories.implementations
 
+import android.content.ContentValues.TAG
+import android.util.Log
+import com.example.sensorproject.data.remote.models.AdvSensorApi
 import com.example.sensorproject.data.remote.prodivers.SensorProviderImpl
 import com.example.sensorproject.domain.converters.AdvSensorConverterImpl
 import com.example.sensorproject.domain.models.SensorList
@@ -12,14 +15,15 @@ class AdvSensorRepositoryImpl(private val sensorConverter: AdvSensorConverterImp
     private val sensorProvider: SensorProviderImpl = SensorProviderImpl()
 
     @UnstableDefault
-    suspend fun PullAdvSensor(): Deferred<List<SensorList>> {
-        return try {
-            val advSensor = sensorProvider.getAdvSensorListAsync().await()
-            GlobalScope.async {
-                advSensor.map { advSensor -> sensorConverter.fromApiToUIAdvSensor(model = advSensor)  }
-            }
-        } catch (e: Exception)  {
-            GlobalScope.async { error(e) }
-        }
+    suspend fun pullAdvSensorAsync(idSensor: Int): AdvSensorApi {
+        return sensorProvider.getAdvSensorListAsync(idSensor).await()
+//        return try {
+//            val advSensor = sensorProvider.getAdvSensorListAsync(idSensor).await()
+//            GlobalScope.async {
+//                advSensor.map { advSensor -> sensorConverter.fromApiToUIAdvSensor(model = advSensor)  }
+//            }
+//        } catch (e: Exception)  {
+//            GlobalScope.async { error(e) }
+//        }
     }
 }

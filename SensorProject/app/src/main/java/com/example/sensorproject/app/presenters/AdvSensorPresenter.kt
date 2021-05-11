@@ -16,11 +16,12 @@ class AdvSensorPresenter : MvpPresenter<AdvSensorView>() {
     private val advSensorRepositoryImpl = AdvSensorRepositoryImpl(sensorConverter = AdvSensorConverterImpl())
 
     @UnstableDefault
-    fun PullAdvSensor() {
+    fun PullAdvSensor(idSensor: Int) {
         viewState.loadingSensor()
         GlobalScope.launch(Dispatchers.IO) {
             try {
-                val advSensors = advSensorRepositoryImpl.PullAdvSensor().await()
+//                val advSensors = advSensorRepositoryImpl.pullAdvSensorAsync(idSensor).await()
+                val advSensors = advSensorRepositoryImpl.pullAdvSensorAsync(idSensor)
                 withContext(Dispatchers.Main) {
                     viewState.startSensor(data = advSensors)
                 }

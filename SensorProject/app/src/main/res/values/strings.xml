@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Датчики</string>
     <string name="listSensorLoading">Loading…</string>
+    <string name="name_sensor">Название</string>
+    <string name="desc_sensor">Описание</string>
+    <string name="cord_sensor">Кординаты</string>
+    <string name="status_sensor">Состояние</string>
 </resources>

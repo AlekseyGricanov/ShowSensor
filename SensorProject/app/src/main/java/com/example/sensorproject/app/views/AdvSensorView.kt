@@ -1,9 +1,9 @@
 package com.example.sensorproject.app.views
 
 import com.arellomobile.mvp.MvpView
-import com.example.sensorproject.domain.models.SensorList
+import com.example.sensorproject.data.remote.models.AdvSensorApi
 
 interface AdvSensorView: MvpView {
-    fun startSensor(data: List<SensorList>)
+    fun startSensor(data: AdvSensorApi)
     fun loadingSensor()
 }
