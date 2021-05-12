@@ -15,15 +15,14 @@ class AdvSensorRepositoryImpl(private val sensorConverter: AdvSensorConverterImp
     private val sensorProvider: SensorProviderImpl = SensorProviderImpl()
 
     @UnstableDefault
-    suspend fun pullAdvSensorAsync(idSensor: Int): AdvSensorApi {
-        return sensorProvider.getAdvSensorListAsync(idSensor).await()
-//        return try {
-//            val advSensor = sensorProvider.getAdvSensorListAsync(idSensor).await()
-//            GlobalScope.async {
-//                advSensor.map { advSensor -> sensorConverter.fromApiToUIAdvSensor(model = advSensor)  }
-//            }
-//        } catch (e: Exception)  {
-//            GlobalScope.async { error(e) }
-//        }
+    suspend fun pullAdvSensorAsync(idSensor: Int): Deferred<List<SensorList>> {
+        return try {
+            val advSensor = sensorProvider.getAdvSensorListAsync(idSensor).await()
+            GlobalScope.async {
+                advSensor.map { advSensor -> sensorConverter.fromApiToUIAdvSensor(model = advSensor)  }
+            }
+        } catch (e: Exception)  {
+            GlobalScope.async { error(e) }
+        }
     }
 }

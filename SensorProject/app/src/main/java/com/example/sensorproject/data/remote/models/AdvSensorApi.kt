@@ -12,18 +12,18 @@ data class AdvSensorApi(
         val per_storage: Int,
         val time_service: String,
         val id_sensor: Int)
-//{
-//
-//    companion object  {
-//        @UnstableDefault
-//        fun toObject(stringValue: String): AdvSensorApi {
-//            return Json.nonstrict.parse(serializer(), stringValue)
-//        }
-//    }
-//}
-//
-//// Extension for serialization
-//@UnstableDefault
-//fun AdvSensorApi.toJson(): String {
-//    return Json.stringify(AdvSensorApi.serializer(), this)
-//}
+{
+
+    companion object  {
+        @UnstableDefault
+        fun toObject(stringValue: String): AdvSensorApi {
+            return Json.nonstrict.parse(serializer(), stringValue)
+        }
+    }
+}
+
+// Extension for serialization
+@UnstableDefault
+fun AdvSensorApi.toJson(): String {
+    return Json.stringify(AdvSensorApi.serializer(), this)
+}

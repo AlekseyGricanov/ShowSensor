@@ -20,8 +20,7 @@ class AdvSensorPresenter : MvpPresenter<AdvSensorView>() {
         viewState.loadingSensor()
         GlobalScope.launch(Dispatchers.IO) {
             try {
-//                val advSensors = advSensorRepositoryImpl.pullAdvSensorAsync(idSensor).await()
-                val advSensors = advSensorRepositoryImpl.pullAdvSensorAsync(idSensor)
+                val advSensors = advSensorRepositoryImpl.pullAdvSensorAsync(idSensor).await()
                 withContext(Dispatchers.Main) {
                     viewState.startSensor(data = advSensors)
                 }

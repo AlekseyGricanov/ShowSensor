@@ -8,7 +8,7 @@ class SensorListView(generics.ListAPIView):
     queryset = Sensor.objects.all()
 
 
-class SensorObject(generics.ListAPIView):
+class SensorObject(generics.RetrieveAPIView):
     serializer_class = SensorDetailList
     queryset = SensorDetail.objects.all()
     mass_queryset = [queryset]

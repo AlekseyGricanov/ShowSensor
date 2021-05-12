@@ -16,7 +16,7 @@ class SensorProviderImpl {
     }
 
     @UnstableDefault
-    fun getAdvSensorListAsync(idSensor: Int): Deferred<AdvSensorApi> {
+    fun getAdvSensorListAsync(idSensor: Int): Deferred<List<AdvSensorApi>> {
         return RetrofitFactory.getSensorService().getAdvSensorAsync(idSensor)
     }
 }

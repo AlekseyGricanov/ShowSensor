@@ -12,5 +12,5 @@ interface SensorService {
     fun getSensorAsync(): Deferred<List<SensorApi>>
 
     @GET("sensor/{id}")
-    fun getAdvSensorAsync(@Path("id") id: Int): Deferred<AdvSensorApi>
+    fun getAdvSensorAsync(@Path("id") id: Int): Deferred<List<AdvSensorApi>>
 }

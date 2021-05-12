@@ -14,6 +14,7 @@ import com.example.sensorproject.app.presenters.AdvSensorPresenter
 import com.example.sensorproject.app.views.AdvSensorView
 import com.example.sensorproject.domain.models.SensorList
 import kotlinx.android.synthetic.main.activity_sensor.*
+import kotlinx.coroutines.Deferred
 import kotlinx.serialization.UnstableDefault
 
 
@@ -46,7 +47,7 @@ class SensorActivity : MvpAppCompatActivity(), AdvSensorView {
         sensors.adapter = listAdapter
     }
 
-    override fun startSensor(data: SensorList) {
+    override fun startSensor(data: List<SensorList>) {
         sensors.visibility = View.VISIBLE
         textLoading.visibility = View.GONE
 

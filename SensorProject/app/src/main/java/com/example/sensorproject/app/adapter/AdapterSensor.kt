@@ -10,16 +10,15 @@ import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sensorproject.R
 import com.example.sensorproject.domain.models.SensorList
+import kotlinx.coroutines.Deferred
 import java.util.*
 
 open class AdapterSensor() : RecyclerView.Adapter<AdapterSensor.ViewHolder?>() {
-    private val itemView: SensorList
+    private val itemView: MutableList<SensorList> = LinkedList()
 
-    fun setDate(newItemView: SensorList) {
+    fun setDate(newItemView: List<SensorList>) {
         itemView.clear()
-        itemView.add(newItemView)
-
-        notifyDataSetChanged()
+        itemView.addAll(newItemView)
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
