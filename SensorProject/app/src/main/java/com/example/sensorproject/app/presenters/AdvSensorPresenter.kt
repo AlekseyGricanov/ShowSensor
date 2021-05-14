@@ -15,7 +15,7 @@ class AdvSensorPresenter : MvpPresenter<AdvSensorView>() {
     private val advSensorRepositoryImpl = AdvSensorRepositoryImpl()
 
     @UnstableDefault
-    fun PullAdvSensor(idSensor: Int) {
+    fun pullAdvSensor(idSensor: Int) {
         viewState.loadingSensor()
         GlobalScope.launch(Dispatchers.IO) {
             try {

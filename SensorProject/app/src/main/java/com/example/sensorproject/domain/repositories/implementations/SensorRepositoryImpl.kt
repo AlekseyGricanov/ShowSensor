@@ -12,7 +12,7 @@ class SensorRepositoryImpl(private val sensorConverter: SensorConverterImpl) {
     private val sensorProvider: SensorProviderImpl = SensorProviderImpl()
 
     @UnstableDefault
-    suspend fun PullSensor(): Deferred<List<SensorItemList>> {
+    suspend fun pullSensor(): List<SensorItemList> {
         return try {
             val sensor = sensorProvider.getSensorListAsync().await()
             GlobalScope.async {
@@ -20,6 +20,6 @@ class SensorRepositoryImpl(private val sensorConverter: SensorConverterImpl) {
             }
         } catch (e: Exception)  {
             GlobalScope.async { error(e) }
-        }
+        }.await()
     }
 }

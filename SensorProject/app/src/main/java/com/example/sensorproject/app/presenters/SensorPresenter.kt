@@ -16,11 +16,11 @@ class SensorPresenter : MvpPresenter<SensorView>() {
     private val sensorRepositoryImpl = SensorRepositoryImpl(sensorConverter = SensorConverterImpl())
 
     @UnstableDefault
-    fun PullSensor() {
+    fun pullSensor() {
         viewState.loadingSensor()
         GlobalScope.launch(Dispatchers.IO) {
             try {
-                val sensors = sensorRepositoryImpl.PullSensor().await()
+                val sensors = sensorRepositoryImpl.pullSensor()
                 withContext(Dispatchers.Main) {
                     viewState.startSensor(data = sensors)
                 }

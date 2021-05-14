@@ -31,7 +31,7 @@ class MainActivity : MvpAppCompatActivity(), SensorView, OnClickListener{
         setContentView(R.layout.main_sensor_list)
         setupAdapter()
 
-        sensorPresenter.PullSensor()
+        sensorPresenter.pullSensor()
     }
 
     private fun setupAdapter() {

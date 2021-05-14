@@ -1,22 +1,14 @@
 package com.example.sensorproject.app.adapter
 
-import android.content.DialogInterface
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.annotation.NonNull
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.arellomobile.mvp.MvpFacade.init
 import com.example.sensorproject.R
-import com.example.sensorproject.app.activities.MainActivity
-import com.example.sensorproject.app.activities.SensorActivity
 import com.example.sensorproject.domain.models.SensorItemList
-import kotlinx.android.synthetic.main.item_sensor_list.view.*
 import java.util.*
 
 
@@ -55,9 +47,7 @@ open class AdapterListSensor(private val listener: OnClickListener) : RecyclerVi
         }
 
         override fun onClick(p0: View?) {
-            if (position != RecyclerView.NO_POSITION) {
-                listener.onClickListener(idSensor)
-            }
+            listener.onClickListener(idSensor)
         }
     }
 
