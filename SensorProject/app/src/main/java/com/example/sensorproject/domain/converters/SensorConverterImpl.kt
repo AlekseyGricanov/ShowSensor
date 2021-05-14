@@ -1,9 +1,7 @@
 package com.example.sensorproject.domain.converters
 
-import com.example.sensorproject.data.remote.models.AdvSensorApi
 import com.example.sensorproject.data.remote.models.SensorApi
 import com.example.sensorproject.domain.models.SensorItemList
-import com.example.sensorproject.domain.models.SensorList
 
 class SensorConverterImpl {
 

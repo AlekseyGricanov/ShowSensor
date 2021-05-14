@@ -1,7 +1,5 @@
 package com.example.sensorproject.data.remote.models
 
-import com.example.sensorproject.domain.models.SensorList
-import kotlinx.coroutines.Deferred
 import kotlinx.serialization.*
 import kotlinx.serialization.json.Json
 

@@ -3,7 +3,6 @@ package com.example.sensorproject.app.activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sensorproject.androidx.MvpAppCompatActivity
@@ -17,8 +16,6 @@ import com.example.sensorproject.app.views.SensorView
 import com.example.sensorproject.domain.models.SensorItemList
 import kotlinx.android.synthetic.main.main_sensor_list.*
 import kotlinx.serialization.UnstableDefault
-import kotlinx.android.synthetic.main.activity_sensor.*
-import kotlinx.android.synthetic.main.item_sensor_list.view.*
 
 
 class MainActivity : MvpAppCompatActivity(), SensorView, OnClickListener{
