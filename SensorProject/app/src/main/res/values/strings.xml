@@ -5,4 +5,11 @@
     <string name="desc_sensor">Описание</string>
     <string name="cord_sensor">Кординаты</string>
     <string name="status_sensor">Состояние</string>
+    <string name="todo">TODO</string>
+    <string name="channel">Канал</string>
+    <string name="height">Высота</string>
+    <string name="type">Тип датчика</string>
+    <string name="recorder">Регистратор</string>
+    <string name="discrete_frequency">Частота дискр.</string>
+    <string name="operator">Оператор</string>
 </resources>

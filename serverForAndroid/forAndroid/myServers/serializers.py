@@ -5,7 +5,7 @@ from .models import *
 class SensorList(serializers.ModelSerializer):
     class Meta:
         model = Sensor
-        fields = '__all__'
+        fields = ['id', 'name', 'status']
 
 
 class SensorDetailList(serializers.ModelSerializer):

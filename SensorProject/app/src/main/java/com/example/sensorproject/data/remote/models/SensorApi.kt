@@ -7,10 +7,7 @@ import kotlinx.serialization.json.Json
 data class SensorApi(
     val id: Int,
     val name: String,
-    val coordinates: String,
-    val time_zone: String,
-    val status: String,
-    val desc: String ) {
+    val status: String) {
 
     companion object  {
         @UnstableDefault

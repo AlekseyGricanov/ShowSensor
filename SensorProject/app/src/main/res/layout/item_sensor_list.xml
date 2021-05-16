@@ -2,48 +2,42 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/name_sensor"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:minHeight="64dp"
-        android:gravity="center_vertical|center_horizontal"
-        android:textStyle="italic"
-        tools:text="name_sensor"/>
+        android:background="@color/list_sensor_background"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        tools:ignore="UseCompoundDrawables,UselessParent">
 
-    <TextView
-        android:id="@+id/desc_sensor"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:minHeight="64dp"
-        android:gravity="center_vertical|center_horizontal"
-        android:textStyle="italic"
-        tools:text="desc_sensor"/>
+        <TextView
+            android:id="@+id/name_sensor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:minHeight="64dp"
+            android:gravity="center_vertical|start"
+            android:textStyle="bold"
+            tools:text="name_sensor"/>
 
-    <TextView
-        android:id="@+id/cord_sensor"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:minHeight="64dp"
-        android:gravity="center_vertical|center_horizontal"
-        android:textStyle="italic"
-        tools:text="cord_sensor"/>
+        <ImageView
+            android:id="@+id/stat_sensor"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/todo"
+            android:gravity="center_vertical|end"/>
 
-    <ImageView
-        android:id="@+id/stat_sensor"
-        android:layout_width="0dp"
-        android:layout_height="20dp"
-        android:layout_weight="1"
-        android:layout_marginTop="20dp"
-        android:gravity="center_vertical"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line_list_sensor"/>
 
 </LinearLayout>

@@ -27,16 +27,12 @@ open class AdapterListSensor(private val listener: OnClickListener) : RecyclerVi
 
         private var idSensor: Int = -1
         private val nameSensor: TextView = itemView.findViewById(R.id.name_sensor)
-        private val descSensor: TextView = itemView.findViewById(R.id.desc_sensor)
-        private val cordSensor: TextView = itemView.findViewById(R.id.cord_sensor)
         private val statSensor: ImageView = itemView.findViewById(R.id.stat_sensor)
 
         fun bind(model: SensorItemList) {
 
             idSensor = model.idSensor
             nameSensor.text = model.nameSensor
-            descSensor.text = model.descSensor
-            cordSensor.text = model.cordSensor
             when (model.statusSensor) {
                 "1" -> statSensor.setImageResource(R.drawable.green_circle_100)
                 "0" -> statSensor.setImageResource(R.drawable.red_circle_100)

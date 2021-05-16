@@ -42,14 +42,12 @@ class MainActivity : MvpAppCompatActivity(), SensorView, OnClickListener{
 
     override fun startSensor(data: List<SensorItemList>) {
         listSensor.visibility = View.VISIBLE
-        desc_sensor_list_layout.visibility = View.VISIBLE
         textListLoading.visibility = View.GONE
 
         listAdapter.setDate(newItemView = data)
     }
 
     override fun loadingSensor() {
-        desc_sensor_list_layout.visibility = View.GONE
         listSensor.visibility = View.GONE
         textListLoading.visibility = View.VISIBLE
     }

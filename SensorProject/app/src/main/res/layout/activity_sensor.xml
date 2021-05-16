@@ -6,77 +6,283 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/desc_sensor_list_layout"
-        android:orientation="horizontal"
+        android:id="@+id/name_stat_for_detail"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
+        android:layout_height="wrap_content"
+        android:background="@color/list_sensor_background"
+        android:orientation="horizontal"
         android:paddingLeft="16dp"
-        android:paddingRight="16dp">
+        android:paddingRight="16dp"
+        tools:ignore="UseCompoundDrawables,UselessParent">
 
         <TextView
             android:id="@+id/name_sensor"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="center_vertical"
             android:minHeight="64dp"
-            tools:text="name_sensor" />
+            android:gravity="center_vertical|start"
+            android:textStyle="bold"
+            tools:text="name_sensor"/>
 
-        <TextView
-                android:id="@+id/id_sensor_main"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:minHeight="64dp" />
-
-        <TextView
-            android:id="@+id/l_u_date_sensor_main"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:minHeight="64dp" />
-
-        <TextView
-            android:id="@+id/stor_sensor_main"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:minHeight="64dp" />
-
-        <TextView
-            android:id="@+id/service_sensor"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:minHeight="64dp" />
-
-        <TextView
-            android:id="@+id/id_sensor_item"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:minHeight="64dp" />
+        <ImageView
+            android:id="@+id/stat_sensor"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="20dp"
+            android:contentDescription="@string/todo"
+            android:gravity="center_vertical|end"/>
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/bat_stor_sensor_list_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginTop="75dp">
+
+        <ImageView
+            android:id="@+id/bat_sensor_img"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/todo"
+            android:gravity="center_vertical"/>
+
+        <TextView
+            android:id="@+id/bat_sensor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|start"
+            android:minHeight="20dp"
+            android:textSize="@dimen/size_text_desc"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            tools:text="100%"/>
+
+        <TextView
+            android:id="@+id/stor_sensor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical|end"
+            android:minHeight="20dp"
+            android:textSize="@dimen/size_text_desc"
+            android:textStyle="bold"
+            android:layout_marginEnd="10dp"
+            tools:text="100%"/>
+
+        <ImageView
+            android:id="@+id/stor_sensor_img"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/todo"
+            android:gravity="center_vertical|end"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/desc_sensor_list_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginTop="105dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|start"
+                android:minHeight="20dp"
+                android:textSize="@dimen/size_text_desc"
+                android:textStyle="bold"
+                android:text="@string/channel"/>
+
+            <TextView
+                android:id="@+id/channel_sensor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:minHeight="20dp"
+                android:textSize="@dimen/size_text_desc"
+                tools:text="name_sensor"/>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_list_sensor"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|start"
+                android:minHeight="20dp"
+                android:textSize="@dimen/size_text_desc"
+                android:textStyle="bold"
+                android:text="@string/height"/>
+
+            <TextView
+                android:id="@+id/height_sensor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:textSize="@dimen/size_text_desc"
+                android:minHeight="20dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_list_sensor"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|start"
+                android:minHeight="20dp"
+                android:textSize="@dimen/size_text_desc"
+                android:textStyle="bold"
+                android:text="@string/type"/>
+
+            <TextView
+                android:id="@+id/type_sensor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:textSize="@dimen/size_text_desc"
+                android:minHeight="20dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_list_sensor"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|start"
+                android:minHeight="20dp"
+                android:textSize="@dimen/size_text_desc"
+                android:textStyle="bold"
+                android:text="@string/recorder"/>
+
+            <TextView
+                android:id="@+id/recorder_sensor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:textSize="@dimen/size_text_desc"
+                android:minHeight="20dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_list_sensor"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|start"
+                android:minHeight="20dp"
+                android:textSize="@dimen/size_text_desc"
+                android:textStyle="bold"
+                android:text="@string/discrete_frequency"/>
+
+            <TextView
+                android:id="@+id/discrete_frequency_sensor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:textSize="@dimen/size_text_desc"
+                android:minHeight="20dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_list_sensor"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|start"
+                android:minHeight="20dp"
+                android:textSize="@dimen/size_text_desc"
+                android:textStyle="bold"
+                android:text="@string/operator"/>
+
+            <TextView
+                android:id="@+id/operator_sensor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical|end"
+                android:textSize="@dimen/size_text_desc"
+                android:minHeight="20dp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/line_list_sensor"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/listSensorLoading"
+        android:textSize="32sp"
+        android:textColor="#000000"
+        android:layout_gravity="center"/>
+
 </FrameLayout>
-
-<!--    <androidx.recyclerview.widget.RecyclerView-->
-<!--        android:id="@+id/sensors"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"/>-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/textLoading"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/listSensorLoading"-->
-<!--        android:textSize="32sp"-->
-<!--        android:textColor="#000000"-->
-<!--        android:layout_gravity="center"-->
-<!--        />-->
