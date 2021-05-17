@@ -12,4 +12,5 @@
     <string name="recorder">Регистратор</string>
     <string name="discrete_frequency">Частота дискр.</string>
     <string name="operator">Оператор</string>
+    <string name="showInMaps">Показать на карте</string>
 </resources>

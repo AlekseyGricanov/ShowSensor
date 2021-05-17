@@ -14,6 +14,8 @@ data class AdvSensorApi(
         val recorder_sensor: String,
         val discrete_frequency_sensor: Int,
         val operator_sensor: String,
+        val latitude_sensor: String,
+        val longitude_sensor: String,
         val perc_memr_free_storage: Int,
         val perc_battery_storage: Int)
 {

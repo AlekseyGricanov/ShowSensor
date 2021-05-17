@@ -1,10 +1,10 @@
 package com.example.sensorproject.app.activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.PresenterType
@@ -19,6 +19,10 @@ import kotlinx.serialization.UnstableDefault
 
 class SensorActivity : MvpAppCompatActivity(), AdvSensorView {
 
+    private var nameSensor = "0"
+    private var latitude = 0.0f
+    private var longitude = 0.0f
+
     @InjectPresenter(type = PresenterType.LOCAL)
     lateinit var sensorPresenter: AdvSensorPresenter
 
@@ -30,7 +34,7 @@ class SensorActivity : MvpAppCompatActivity(), AdvSensorView {
         val intent = intent
         val idSensor = intent.getIntExtra("idSensor", -1)
 
-        Toast.makeText(this, "message: $idSensor", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(this, "message: $idSensor", Toast.LENGTH_SHORT).show()
 
         sensorPresenter.pullAdvSensor(idSensor)
     }
@@ -71,11 +75,24 @@ class SensorActivity : MvpAppCompatActivity(), AdvSensorView {
         recorder_sensor.text = data.recorder_sensor
         discrete_frequency_sensor.text = data.discrete_frequency_sensor.toString()
         operator_sensor.text = data.operator_sensor
+
+        //Получаем кординаты, для передачи на карту
+        nameSensor = data.name
+        latitude = data.latitude_sensor.toFloat()
+        longitude = data.longitude_sensor.toFloat()
     }
 
     override fun loadingSensor() {
         desc_sensor_list_layout.visibility = GONE
         name_stat_for_detail.visibility = GONE
         textLoading.visibility = VISIBLE
+    }
+
+    fun showMaps(view: View?) {
+        val intentMaps = Intent(this, ActivityForMaps::class.java)
+        intentMaps.putExtra("nameSensor", nameSensor);
+        intentMaps.putExtra("latitude", latitude);
+        intentMaps.putExtra("longitude", longitude);
+        startActivity(intentMaps)
     }
 }

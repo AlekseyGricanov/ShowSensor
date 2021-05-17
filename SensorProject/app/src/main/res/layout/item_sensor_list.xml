@@ -11,8 +11,8 @@
         android:layout_height="wrap_content"
         android:background="@color/list_sensor_background"
         android:orientation="horizontal"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
+        android:paddingLeft="@dimen/size_padding"
+        android:paddingRight="@dimen/size_padding"
         tools:ignore="UseCompoundDrawables,UselessParent">
 
         <TextView
@@ -20,16 +20,16 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:minHeight="64dp"
+            android:minHeight="@dimen/min_height"
             android:gravity="center_vertical|start"
             android:textStyle="bold"
             tools:text="name_sensor"/>
 
         <ImageView
             android:id="@+id/stat_sensor"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="@dimen/size_photo"
+            android:layout_height="@dimen/size_photo"
+            android:layout_marginTop="@dimen/size_photo"
             android:contentDescription="@string/todo"
             android:gravity="center_vertical|end"/>
 

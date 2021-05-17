@@ -24,5 +24,7 @@ class SensorDetail(models.Model):
     recorder_sensor = models.CharField("Регистратор", max_length=100)
     discrete_frequency_sensor = models.IntegerField("Частота дискр.")
     operator_sensor = models.CharField("Оператор", max_length=100)
+    latitude_sensor = models.DecimalField("Широта", decimal_places=3, max_digits=10, default=0)
+    longitude_sensor = models.DecimalField("Долгота", decimal_places=3, max_digits=10, default=0)
     perc_memr_free_storage = models.IntegerField("Процент свободной памяти")
     perc_battery_storage = models.IntegerField("Процент аккамулятора")

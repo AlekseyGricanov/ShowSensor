@@ -53,8 +53,8 @@ class MainActivity : MvpAppCompatActivity(), SensorView, OnClickListener{
     }
 
     override fun onClickListener(idSensor: Int) {
-        val randomIntent = Intent(this, SensorActivity::class.java)
-        randomIntent.putExtra("idSensor", idSensor);
-        startActivity(randomIntent)
+        val intent = Intent(this, SensorActivity::class.java)
+        intent.putExtra("idSensor", idSensor);
+        startActivity(intent)
     }
 }

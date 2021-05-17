@@ -49,6 +49,17 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
+    //Osmdroid version
+    def osmdroidVersion = '6.1.10'
+    implementation "org.osmdroid:osmdroid-android:$osmdroidVersion"
+    implementation "org.osmdroid:osmdroid-wms:$osmdroidVersion"
+    implementation "org.osmdroid:osmdroid-mapsforge:$osmdroidVersion"
+    implementation "org.osmdroid:osmdroid-geopackage:$osmdroidVersion"
+
+    implementation 'com.github.MKergall:osmbonuspack:6.7.0'
+
+    implementation 'org.osmdroid:osmdroid-third-party:6.0.1'
+
     //Android support
     def androidSupport = '28.0.0'
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -73,7 +84,8 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofiVersion"
 
     //OkHttp
-    def OkHttpVersion = '4.0.0-RC1'
+    def OkHttpVersion = '4.9.1'
+//    def OkHttpVersion = '4.0.0-RC1'
     implementation "com.squareup.okhttp3:okhttp:$OkHttpVersion"
     implementation "com.squareup.okhttp3:logging-interceptor:$OkHttpVersion"
 
